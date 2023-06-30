@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html class="scroll-smooth">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="fontawesome.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'bruh-black': "#000",
+            'bruh-white': "#fff",
+            'bruh-gray': "#bbb",
+            'nav-bg': "hsl(0 0% 0% / 0.5)"
+          },
+          backgroundImage: {
+            "hero-bg": "url('lib/bg.svg')",
+            "hero-texture": "url('lib/texture.svg')",
+          },
+          backgroundSize: {
+            '100': "100%",
+            '300': "400%",
+          },
+          fontFamily: {
+            cabin: "Cabin, sans-serif",
+            akira: "Akira, sans-serif",
+          },
+        },
+      },
+    };
+  </script>
+</head>
+
+<body class="overflow-x-hidden">
+  <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+  <nav id="navbar"
+    class="fixed top-0 w-screen p-4 md:px-24 flex flex-row justify-between items-center z-20 bg-black transition duration-300 ease">
+    <div
+      class="md:flex flex-row gap-5 text-bruh-white underline decoration-transparent text-sm underline-offset-2 decoration-2 font-cabin hidden">
+      <a class="transition duration-300 ease-in-out hover:decoration-bruh-gray" href="#home">HOME</a>
+      <a class="transition duration-300 ease-in-out hover:decoration-bruh-gray" href="#about">ABOUT</a>
+      <a class="transition duration-300 ease-in-out hover:decoration-bruh-gray" href="#skills">SKILLS</a>
+      <a class="transition duration-300 ease-in-out hover:decoration-bruh-gray" href="#projects">PROJECTS</a>
+      <a class="transition duration-300 ease-in-out hover:decoration-bruh-gray" href="#contact">CONTACT</a>
+    </div>
+
+    <a id="navbar-logo" href="#home"
+      class="text-md font-akira uppercase text-bruh-white transition duration-300 ease-in-out hover:text-bruh-gray block md:hidden">Portfolio<!--Naman Chandok--></a>
+
+    <div class="md:flex flex-row gap-6 text-bruh-white text-xl hidden">
+      <a class="transition duration-300 ease-in-out hover:text-bruh-gray cursor-pointer"
+        url="https://instagram.com/namanchandok"><i class="fab fa-instagram"></i></a>
+      <a class="transition duration-300 ease-in-out hover:text-bruh-gray cursor-pointer"
+        url="https://github.com/namanchandok"><i class="fab fa-github"></i></a>
+      <a class="transition duration-300 ease-in-out hover:text-bruh-gray cursor-pointer"
+        url="https://twitter.com/br0wot"><i class="fab fa-twitter"></i></a>
+      <!-- <a class="transition duration-300 ease-in-out hover:text-bruh-gray cursor-pointer"
+        url="mailto:namanchandok1@gmail.com"><i class="far fa-envelope"></i></a> -->
+      <a class="transition duration-300 ease-in-out hover:text-bruh-gray cursor-pointer"
+        url='https://www.linkedin.com/in/naman-chandok-874b421b0/'><i class="fab fa-linkedin"></i></a>
+      <a class="transition duration-300 ease-in-out hover:text-bruh-gray cursor-pointer"
+        url='https://discord.com/users/481518334509187089'><i class="fab fa-discord"></i></a>
+      <a class="transition duration-300 ease-in-out hover:text-bruh-gray cursor-pointer"
+        url="https://open.spotify.com/user/gh04xw1wcz6kkx4icrbbxogb3?si=0b493b9fe369429f"><i
+          class="fab fa-spotify"></i></a>
+    </div>
+
+  </nav>
+
+  <button class="mobile-nav-toggle md:hidden" aria-controls="mobile-nav" aria-expanded="false"></button>
+
+  <nav id="mobile-nav" data-visible="false"
+    class="transition duration-300 ease-in-out md:hidden fixed inset-y-0 inset-x-40 right-0 py-24 px-8 bg-nav-bg flex flex-col translate-x-full z-20 text-3xl text-white font-cabin gap-6 backdrop-blur-sm underline decoration-transparent underline-offset-4 decoration-2">
+    <a class="transition duration-300 ease-in-out hover:decoration-bruh-gray" href="#home">HOME</a>
+    <a class="transition duration-300 ease-in-out hover:decoration-bruh-gray" href="#about">ABOUT</a>
+    <a class="transition duration-300 ease-in-out hover:decoration-bruh-gray" href="#skills">SKILLS</a>
+    <a class="transition duration-300 ease-in-out hover:decoration-bruh-gray" href="#projects">PROJECTS</a>
+    <a class="transition duration-300 ease-in-out hover:decoration-bruh-gray" href="#contact">CONTACT</a>
+  </nav>
+
+  <section id="home">
+    <div
+      class="bg-hero-bg bg-black bg-no-repeat bg-center bg-300 md:bg-100 w-screen h-screen relative items-center justify-center flex flex-col text-center">
+      <div class="rounded-full h-[50vh] w-[50vh] md:h-[70vh] md:w-[70vh] border-2 border-white/20 absolute animate-pulse heroBg"></div>
+      <div class="rounded-full h-[40vh] w-[40vh] md:h-[60vh] md:w-[60vh] border-2 border-white/10 absolute animate-pulse heroBg"></div>
+      <h1 class="text-5xl font-akira text-bruh-white z-10 heroText">Portfolio of a<!--I'm a Naman Chandok--></h1>
+      <h3 class="text-lg font-cabin text-bruh-gray z-10 heroText">
+        <span class="txt-type" data-wait="3000"
+          data-words='["Front-End Developer", "Graphic Designer", "Video Editor", "Adobe Connoisseur", "Coffee Addict", "brain the just not working"]'>&nbsp;</span>
+        <span class="animate-pulse text-[#666]">|</span>
+      </h3>
+      <div class="absolute bg-black/50 w-full h-full top-0 left-0 z-0"></div>
+      <div class="custom-shape-divider-bottom-1687952567 heroTexture z-0">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path
+            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+            class="shape-fill"></path>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="p-8 md:px-32 md:py-16 flex flex-col md:flex-row-reverse items-center justify-center gap-8">
+      <!-- <img src="lib/hello.jpg" id="aboutImg"
+        class="flex-shrink-0 w-56 h-56 rounded-full object-cover translate-x-0 shadow-md z-10 object-left md:rounded-md md:w-64 m-0 md:h-95 xl:w-[300px] xl:h-[400px]"> -->
+      <div class="w-full md:w-3/5 translate-x-0" id="aboutText">
+        <h1 class="text-4xl font-akira" id="aboutHeading">Hi,<!--I'm Naman Chandok--></h1>
+        <p class="text-md font-cabin py-3">We're college students living in New Delhi, India. We work as front-end developers
+          using React.js and Next.js. We're also proficient in programming in Python and Php. We also work with Adobe
+          Software including Photoshop, Illustrator, After Effects and Premiere Pro.</p>
+          <!-- <p class="text-md font-cabin py-3">I'm a college student living in New Delhi, India. I am a front-end developer
+            using React.js and Next.js. I am also proficient in programming in Python and Php. I also work with Adobe
+            Software including Photoshop, Illustrator, After Effects and Premiere Pro.</p> -->
+        <a class="cursor-pointer text-bruh-white inline-block mr-1 my-1" url="https://instagram.com/namanchandok">
+          <div
+            class="rounded-full w-12 h-12 bg-black text-xl flex items-center justify-center transition duration-300 ease-in-out hover:bg-[#333]">
+            <i class="fab fa-instagram"></i>
+          </div>
+        </a>
+        <a class="cursor-pointer text-bruh-white inline-block mr-1 my-1" url="https://github.com/namanchandok">
+          <div
+            class="rounded-full w-12 h-12 bg-black text-xl flex items-center justify-center transition duration-300 ease-in-out hover:bg-[#333]">
+            <i class="fab fa-github"></i>
+          </div>
+        </a>
+        <a class="cursor-pointer text-bruh-white inline-block mr-1 my-1" url="https://twitter.com/br0wot">
+          <div
+            class="rounded-full w-12 h-12 bg-black text-xl flex items-center justify-center transition duration-300 ease-in-out hover:bg-[#333]">
+            <i class="fab fa-twitter"></i>
+          </div>
+        </a>
+        <a class="cursor-pointer text-bruh-white inline-block mr-1 my-1"
+          url='https://www.linkedin.com/in/naman-chandok-874b421b0/'>
+          <div
+            class="rounded-full w-12 h-12 bg-black text-xl flex items-center justify-center transition duration-300 ease-in-out hover:bg-[#333]">
+            <i class="fab fa-linkedin-in"></i>
+          </div>
+        </a>
+        <a class="cursor-pointer text-bruh-white inline-block mr-1 my-1"
+          url='https://discord.com/users/481518334509187089'>
+          <div
+            class="rounded-full w-12 h-12 bg-black text-xl flex items-center justify-center transition duration-300 ease-in-out hover:bg-[#333]">
+            <i class="fab fa-discord"></i>
+          </div>
+        </a>
+        <a class="cursor-pointer text-bruh-white inline-block mr-1 my-1"
+          url="https://open.spotify.com/user/gh04xw1wcz6kkx4icrbbxogb3?si=0b493b9fe369429f">
+          <div
+            class="rounded-full w-12 h-12 bg-black text-xl flex items-center justify-center transition duration-300 ease-in-out hover:bg-[#333]">
+            <i class="fab fa-spotify"></i>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="p-8 md:px-32 md:py-16 text-center">
+      <h1 class="text-4xl font-akira py-8">Skills</h1>
+      <div class="overflow-hidden md:whitespace-nowrap">
+        <div class="inline-block carousel1">
+          <img class="inline w-24 object-center object-contain m-3 transition opacity-80 duration-300 ease-in-out hover:scale-110 hover:opacity-100"
+            src="lib/skills/html.svg" title="HTML">
+          <img class="inline w-24 object-center object-contain m-3 transition opacity-80 duration-300 ease-in-out hover:scale-110 hover:opacity-100"
+            src="lib/skills/css.png" title="CSS">
+          <img class="inline w-24 object-center object-contain m-3 transition opacity-80 duration-300 ease-in-out hover:scale-110 hover:opacity-100"
+            src="lib/skills/js.png" title="JavaScript">
+          <img class="inline w-24 object-center object-contain m-3 transition opacity-80 duration-300 ease-in-out hover:scale-110 hover:opacity-100"
+            src="lib/skills/bootstrap.png" title="Bootstrap">
+          <img class="inline w-24 object-center object-contain m-3 transition opacity-80 duration-300 ease-in-out hover:scale-110 hover:opacity-100"
+            src="lib/skills/firebase.svg" title="FireBase">
+          <img class="inline w-24 object-center object-contain m-3 transition opacity-80 duration-300 ease-in-out hover:scale-110 hover:opacity-100"
+            src="lib/skills/flask.png" title="Flask">
+          <img class="inline w-24 object-center object-contain m-3 transition opacity-80 duration-300 ease-in-out hover:scale-110 hover:opacity-100"
+            src="lib/skills/git.png" title="Git">
+          <img class="inline w-24 object-center object-contain m-3 transition opacity-80 duration-300 ease-in-out hover:scale-110 hover:opacity-100"
+            src="lib/skills/tailwind.png" title="Tailwind CSS">
+          <img class="inline w-24 object-center object-contain m-3 transition opacity-80 duration-300 ease-in-out hover:scale-110 hover:opacity-100"
+            src="lib/skills/heroku.png" title="Heroku">
+          <img class="inline w-24 object-center object-contain m-3 transition opacity-80 duration-300 ease-in-out hover:scale-110 hover:opacity-100"
+            src="lib/skills/typescript.png" title="TypeScript">
+        </div>
+        <div class="hidden md:inline-block carousel1">
+          <img class="inline w-24 object-center object-contain m-3 transition opacity-80 duration-300 ease-in-out hover:scale-110 hover:opacity-100"
+            src="lib/skills/html.svg" title="HTML">
+          <img class="inline w-24 object-center object-contain m-3 transition opacity-80 duration-300 ease-in-out hover:scale-110 hover:opacity-100"
+            src="lib/skills/css.png" title="CSS">
+          <img class="inline w-24 object-center object-contain m-3 transition opacity-80 duration-300 ease-in-out hover:scale-110 hover:opacity-100"
+            src="lib/skills/js.png" title="JavaScript">
+          <img class="inline w-24 object-center object-contain m-3 transition opacity-80 duration-300 ease-in-out hover:scale-110 hover:opacity-100"
+            src="lib/skills/bootstrap.png" title="Bootstrap">
+          <img class="inline w-24 object-center object-contain m-3 transition opacity-80 duration-300 ease-in-out hover:scale-110 hover:opacity-100"
+            src="lib/skills/firebase.svg" title="FireBase">
+          <img class="inline w-24 object-center object-contain m-3 transition opacity-80 duration-300 ease-in-out hover:scale-110 hover:opacity-100"
+            src="lib/skills/flask.png" title="Flask">
+          <img class="inline w-24 object-center object-contain m-3 transition opacity-80 duration-300 ease-in-out hover:scale-110 hover:opacity-100"
+            src="lib/skills/git.png" title="Git">
+          <img class="inline w-24 object-center object-contain m-3 transition opacity-80 duration-300 ease-in-out hover:scale-110 hover:opacity-100"
+            src="lib/skills/tailwind.png" title="Tailwind CSS">
+          <img class="inline w-24 object-center object-contain m-3 transition opacity-80 duration-300 ease-in-out hover:scale-110 hover:opacity-100"
+            src="lib/skills/heroku.png" title="Heroku">
+          <img class="inline w-24 object-center object-contain m-3 transition opacity-80 duration-300 ease-in-out hover:scale-110 hover:opacity-100"
+            src="lib/skills/typescript.png" title="TypeScript">
+        </div>
+      </div>
+      <div class="overflow-hidden md:whitespace-nowrap">
+        <div class="inline-block carousel2">
+          <img class="inline w-24 object-center object-contain m-3 transition opacity-80 duration-300 ease-in-out hover:scale-110 hover:opacity-100"
+            src="lib/skills/mysql.png" title="MySQL">
+          <img class="inline w-24 object-center object-contain m-3 transition opacity-80 duration-300 ease-in-out hover:scale-110 hover:opacity-100"
+            src="lib/skills/php.png" title="PHP">
+          <img class="inline w-24 object-center object-contain m-3 transition opacity-80 duration-300 ease-in-out hover:scale-110 hover:opacity-100"
+            src="lib/skills/python.png" title="Python">
+          <img class="inline w-24 object-center object-contain m-3 transition opacity-80 duration-300 ease-in-out hover:scale-110 hover:opacity-100"
+            src="lib/skills/react.png" title="React JS">
+          <img class="inline w-24 object-center object-contain m-3 transition opacity-80 duration-300 ease-in-out hover:scale-110 hover:opacity-100"
+            src="lib/skills/blender.png" title="Blender 3D">
+          <img class="inline w-24 object-center object-contain m-3 transition opacity-80 duration-300 ease-in-out hover:scale-110 hover:opacity-100"
+            src="lib/skills/illustrator.png" title="Adobe Illustrator">
+          <img class="inline w-24 object-center object-contain m-3 transition opacity-80 duration-300 ease-in-out hover:scale-110 hover:opacity-100"
+            src="lib/skills/xd.png" title="Adobe XD">
+          <img class="inline w-24 object-center object-contain m-3 transition opacity-80 duration-300 ease-in-out hover:scale-110 hover:opacity-100"
+            src="lib/skills/aftereffects.png" title="Adobe After Effects">
+          <img class="inline w-24 object-center object-contain m-3 transition opacity-80 duration-300 ease-in-out hover:scale-110 hover:opacity-100"
+            src="lib/skills/photoshop.png" title="Adobe Photoshop">
+          <img class="inline w-24 object-center object-contain m-3 transition opacity-80 duration-300 ease-in-out hover:scale-110 hover:opacity-100"
+            src="lib/skills/premierpro.png" title="Adobe Premiere Pro">
+        </div>
+        <div class="hidden md:inline-block carousel2">
+          <img class="inline w-24 object-center object-contain m-3 transition opacity-80 duration-300 ease-in-out hover:scale-110 hover:opacity-100"
+            src="lib/skills/mysql.png" title="MySQL">
+          <img class="inline w-24 object-center object-contain m-3 transition opacity-80 duration-300 ease-in-out hover:scale-110 hover:opacity-100"
+            src="lib/skills/php.png" title="PHP">
+          <img class="inline w-24 object-center object-contain m-3 transition opacity-80 duration-300 ease-in-out hover:scale-110 hover:opacity-100"
+            src="lib/skills/python.png" title="Python">
+          <img class="inline w-24 object-center object-contain m-3 transition opacity-80 duration-300 ease-in-out hover:scale-110 hover:opacity-100"
+            src="lib/skills/react.png" title="React JS">
+          <img class="inline w-24 object-center object-contain m-3 transition opacity-80 duration-300 ease-in-out hover:scale-110 hover:opacity-100"
+            src="lib/skills/blender.png" title="Blender 3D">
+          <img class="inline w-24 object-center object-contain m-3 transition opacity-80 duration-300 ease-in-out hover:scale-110 hover:opacity-100"
+            src="lib/skills/illustrator.png" title="Adobe Illustrator">
+          <img class="inline w-24 object-center object-contain m-3 transition opacity-80 duration-300 ease-in-out hover:scale-110 hover:opacity-100"
+            src="lib/skills/xd.png" title="Adobe XD">
+          <img class="inline w-24 object-center object-contain m-3 transition opacity-80 duration-300 ease-in-out hover:scale-110 hover:opacity-100"
+            src="lib/skills/aftereffects.png" title="Adobe After Effects">
+          <img class="inline w-24 object-center object-contain m-3 transition opacity-80 duration-300 ease-in-out hover:scale-110 hover:opacity-100"
+            src="lib/skills/photoshop.png" title="Adobe Photoshop">
+          <img class="inline w-24 object-center object-contain m-3 transition opacity-80 duration-300 ease-in-out hover:scale-110 hover:opacity-100"
+            src="lib/skills/premierpro.png" title="Adobe Premiere Pro">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="p-8 md:px-32 md:py-20">
+      <h1 class="text-4xl font-akira py-8 text-center">Projects</h1>
+      <div class="flex flex-col md:flex-row justify-center">
+        <div class="work rounded-lg bg-black/10 shadow-md p-8 w-full md:w-2/5 translate-y-0 my-4 md:mx-4">
+          <img src="lib/works/crypt.png" class="w-full mb-2 rounded-md">
+          <h1 class="font-akira text-2xl py-2">Crypt@trix</h1>
+          <p class="font-cabin text-md">The platform for a 48 hour long crypt hunt organised by Tagore International School, with over 150 participants.</p>
+          <a class="font-cabin uppercase tracking-wide text-sm underline underline-offset-2 decoration-2 decoration-[#888] transition duration-300 ease-in-out text-[#333] hover:decoration-[#555] hover:text-black" href="https://github.com/PyrotechClub/crypt22">View Project on Github</a>
+        </div>
+        <div class="work rounded-lg bg-black/10 shadow-md p-8 w-full md:w-2/5 translate-y-0 my-4 md:translate-y-8 md:mx-4">
+          <img src="lib/works/coral.png" class="w-full mb-2 rounded-md">
+          <h1 class="font-akira text-2xl py-2">Coral</h1>
+          <p class="font-cabin text-md">A concept for a mental health website and its marketing and branding.</p>
+          <a class="font-cabin uppercase tracking-wide text-sm underline underline-offset-2 decoration-2 decoration-[#888] transition duration-300 ease-in-out text-[#333] hover:decoration-[#555] hover:text-black" href="https://github.com/NamanChandok/coral">View Project on Github</a>
+        </div>
+      </div>
+      <div class="flex flex-col md:flex-row justify-center">
+        <div class="work rounded-lg bg-black/10 shadow-md p-8 w-full md:w-2/5 translate-y-0 my-4 md:mx-4">
+          <img src="lib/works/pyro.png" class="w-full mb-2 rounded-md">
+          <h1 class="font-akira text-2xl py-2">Pyrotech</h1>
+          <p class="font-cabin text-md">The website for Pyrotech, the tech club of Tagore International School, Vasant Vihar</p>
+          <a class="font-cabin uppercase tracking-wide text-sm underline underline-offset-2 decoration-2 decoration-[#888] transition duration-300 ease-in-out text-[#333] hover:decoration-[#555] hover:text-black" href="https://github.com/PyrotechClub/pyrotechclub.github.io">View Project on Github</a>
+        </div>
+        <div class="work rounded-lg bg-black/10 shadow-md p-8 w-full md:w-2/5 translate-y-0 my-4 md:translate-y-8 md:mx-4">
+          <img src="lib/works/hadestown.png" class="w-full mb-2 rounded-md">
+          <h1 class="font-akira text-2xl py-2">HadesTown</h1>
+          <p class="font-cabin text-md">A promotional website with branding and merch designs for Hadestown, a broadway musical.</p>
+          <a class="font-cabin uppercase tracking-wide text-sm underline underline-offset-2 decoration-2 decoration-[#888] transition duration-300 ease-in-out text-[#333] hover:decoration-[#555] hover:text-black" href="https://github.com/NamanChandok/alphanode">View Project on Github</a>
+        </div>
+      </div>
+      <div class="flex flex-col md:flex-row justify-center">
+        <div class="work rounded-lg bg-black/10 shadow-md p-8 w-full md:w-2/5 translate-y-0 my-4 md:mx-4">
+          <img src="lib/works/soluva.png" class="w-full mb-2 rounded-md">
+          <h1 class="font-akira text-2xl py-2">Soluva Tech</h1>
+          <p class="font-cabin text-md">The website for Soluva Tech, an IT services agency working in Delhi NCR, India.</p>
+          <a class="font-cabin uppercase tracking-wide text-sm underline underline-offset-2 decoration-2 decoration-[#888] transition duration-300 ease-in-out text-[#333] hover:decoration-[#555] hover:text-black" href="https://github.com/NamanChandok/soluva">View Project on Github</a>
+        </div>
+        <div class="work rounded-lg bg-black/10 shadow-md p-8 w-full md:w-2/5 translate-y-0 my-4 md:translate-y-8 md:mx-4">
+          <img src="lib/works/pong.png" class="w-full mb-2 rounded-md">
+          <h1 class="font-akira text-2xl py-2">Pong</h1>
+          <p class="font-cabin text-md">A recreation of Pong by Atari, one of the earliest arcade video games, using Lua.</p>
+          <a class="font-cabin uppercase tracking-wide text-sm underline underline-offset-2 decoration-2 decoration-[#888] transition duration-300 ease-in-out text-[#333] hover:decoration-[#555] hover:text-black" href="https://github.com/NamanChandok/pong">View Project on Github</a>
+        </div>
+      </div>
+      <h1 class="text-4xl font-akira pt-16 pb-4 text-center translate-y-0" id="graphicHeading">Graphic Design work</h1>
+      <div class="flex flex-col md:flex-row justify-center">
+        <div class="work shadow-md w-full md:w-1/3 translate-y-0 md:mx-6 my-6">
+          <img src="lib/grphic/1.png" class="w-full">
+        </div>
+        <div class="work shadow-md w-full md:w-1/3 translate-y-0 md:translate-y-8 md:mx-6 my-6">
+          <img src="lib/grphic/2.png" class="w-full">
+        </div>
+      </div>
+      <div class="flex flex-col md:flex-row justify-center">
+        <div class="work shadow-md w-full md:w-1/3 translate-y-0 md:mx-6 my-6">
+          <img src="lib/grphic/3.png" class="w-full">
+        </div>
+        <div class="work shadow-md w-full md:w-1/3 translate-y-0 md:translate-y-8 md:mx-6 my-6">
+          <img src="lib/grphic/4.png" class="w-full">
+        </div>
+      </div>
+      <div class="flex flex-col md:flex-row justify-center">
+        <div class="work shadow-md w-full md:w-1/3 translate-y-0 md:mx-6 my-6">
+          <img src="lib/grphic/5.png" class="w-full">
+        </div>
+        <div class="work shadow-md w-full md:w-1/3 translate-y-0 md:translate-y-8 md:mx-6 my-6">
+          <img src="lib/grphic/6.png" class="w-full">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="translate-y-0">
+    <div class="p-8 md:px-32 md:py-20 text-center">
+      <h1 class="text-4xl font-akira">Get in Touch</h1>
+      <p class="text-md font-cabin py-3">We are glad to connect, so come say hello and have a chat →</p>
+      <ul class="text-lg">
+        <li class="flex flex-row gap-3 items-center justify-center py-2"><i class="fas text-[#555] fa-envelope text-2xl"></i>namanchandok1@gmail.com</li>
+        <li class="flex flex-row gap-3 items-center justify-center py-2"><i class="fas text-[#555] fa-envelope text-2xl"></i>shaivis10@gmail.com</li>
+        <li class="flex flex-row gap-3 items-center justify-center py-2"><i class="fas text-[#555] fa-envelope text-2xl"></i>sharansuri1980@gmail.com</li>
+        <li class="flex flex-row gap-3 items-center justify-center py-2"><i class="fas text-[#555] fa-map text-2xl"></i>New Delhi, India</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="footer">
+    <div class="p-8 md:px-32 md:py-20 bg-black text-white text-center">
+      <div class="footer-text">
+        <!-- <a href="#home" class="text-5xl font-akira">Naman Chandok</a> -->
+        <div class="flex flex-row gap-4 text-bruh-white text-2xl justify-center py-6">
+          <a class="transition duration-300 ease-in-out hover:text-bruh-gray cursor-pointer"
+            url="https://instagram.com/namanchandok"><i class="fab fa-instagram"></i></a>
+          <a class="transition duration-300 ease-in-out hover:text-bruh-gray cursor-pointer"
+            url="https://github.com/namanchandok"><i class="fab fa-github"></i></a>
+          <a class="transition duration-300 ease-in-out hover:text-bruh-gray cursor-pointer"
+            url="https://twitter.com/br0wot"><i class="fab fa-twitter"></i></a>
+          <!-- <a class="transition duration-300 ease-in-out hover:text-bruh-gray cursor-pointer"
+            url="mailto:namanchandok1@gmail.com"><i class="far fa-envelope"></i></a> -->
+          <a class="transition duration-300 ease-in-out hover:text-bruh-gray cursor-pointer"
+            url='https://www.linkedin.com/in/naman-chandok-874b421b0/'><i class="fab fa-linkedin"></i></a>
+          <a class="transition duration-300 ease-in-out hover:text-bruh-gray cursor-pointer"
+            url='https://discord.com/users/481518334509187089'><i class="fab fa-discord"></i></a>
+          <a class="transition duration-300 ease-in-out hover:text-bruh-gray cursor-pointer"
+            url="https://open.spotify.com/user/gh04xw1wcz6kkx4icrbbxogb3?si=0b493b9fe369429f"><i
+              class="fab fa-spotify"></i></a>
+        </div>
+        <p class="text-sm text-[#aaa]">© 2023 <!--<b>Naman Chandok</b>.--> All Rights Reserved.</p>
+      </div>
+    </div>
+  </section>
+
+  <script src="anims.js"></script>
+  <script src="typewriter.js"></script>
+  <script src="nav.js" defer></script>
+</body>
+
+</html>

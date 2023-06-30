@@ -1,0 +1,102 @@
+@font-face {
+    font-family: 'Akira';
+    src: url('lib/font.otf');
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #000;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #555;
+}
+
+.custom-shape-divider-bottom-1687952567 {
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1687952567 svg {
+    position: relative;
+    display: block;
+    width: calc(135% + 1.3px);
+    height: 150px;
+}
+
+.custom-shape-divider-bottom-1687952567 .shape-fill {
+    fill: #FFFFFF;
+}
+
+.mobile-nav-toggle {
+    z-index: 100;
+    position: fixed;
+    top: 0.8rem;
+    width: 1.75rem;
+    aspect-ratio: 1;
+    right: 1rem;
+    background: url("lib/hamburger-menu.svg");
+    border: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#mobile-nav[data-visible="true"] {
+    transform: translateX(0%);
+}
+
+.mobile-nav-toggle[aria-expanded="true"] {
+    background: url("lib/close.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.heroText {
+    clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
+}
+
+.footer-text {
+    clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
+}
+
+@keyframes slide1 {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes slide2 {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@media only screen and (min-width: 768px)  {
+
+.carousel1 {
+    animation: slide1 20s infinite linear;
+}
+
+.carousel2 {
+    animation: slide2 20s infinite linear;
+}
+
+}
